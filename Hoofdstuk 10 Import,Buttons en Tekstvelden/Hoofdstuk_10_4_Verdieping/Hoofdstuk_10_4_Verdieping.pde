@@ -1,6 +1,7 @@
 import controlP5.*;
 
 ControlP5 cp;
+ControlP5 dp;
 Button Button1;
 Button Button2;
 int num1 =0;
@@ -13,6 +14,7 @@ void setup(){
   .setPosition(250,0)
   .setSize(250,250)
   .setCaptionLabel("Ouders ");
+  dp = new ControlP5(this);
   Button2 = cp.addButton("Clickk")
   .setPosition(0,0)
   .setSize(250,250)
