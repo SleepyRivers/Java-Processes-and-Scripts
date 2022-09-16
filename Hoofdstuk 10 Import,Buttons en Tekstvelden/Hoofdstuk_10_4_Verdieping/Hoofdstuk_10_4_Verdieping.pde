@@ -13,7 +13,6 @@ void setup(){
   .setPosition(250,0)
   .setSize(250,250)
   .setCaptionLabel("Ouders ");
- cp = new ControlP5(this);
   Button2 = cp.addButton("Clickk")
   .setPosition(0,0)
   .setSize(250,250)
