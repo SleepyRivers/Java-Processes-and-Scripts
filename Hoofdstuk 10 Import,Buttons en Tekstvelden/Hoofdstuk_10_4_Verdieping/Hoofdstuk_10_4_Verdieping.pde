@@ -8,14 +8,14 @@ int num1 =0;
 int num2 =0;
 
 void setup(){
- cp = new ControlP5(this);
   size(500,300);
+  cp = new ControlP5(this);
   Button1 = cp.addButton("Click")
   .setPosition(250,0)
   .setSize(250,250)
   .setCaptionLabel("Ouders ");
   dp = new ControlP5(this);
-  Button2 = cp.addButton("Clickk")
+  Button2 = dp.addButton("Clickk")
   .setPosition(0,0)
   .setSize(250,250)
   .setCaptionLabel("Studenten ");
