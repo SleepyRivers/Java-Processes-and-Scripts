@@ -6,9 +6,11 @@ size(300,200);
 }
 
 void draw(){
-fill(0,255,0);
 background(0,0,0);
+fill(0,255,0);
 rect(leftright,updown,20,20);
+fill(255,0,0);
+rect(100,100,20,20);
 }
 
 void keyPressed(){
