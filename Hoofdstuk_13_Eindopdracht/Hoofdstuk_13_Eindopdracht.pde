@@ -1,9 +1,15 @@
-PVector pos; 
+ArrayList<PVector> snake = new ArrayList<PVector>();
+PVector pos;
+
+PVector food;
 
 PVector dir = new PVector(0,0);
 
 int size = 20;
 int w, h; 
+
+int speed = 20;
+int longlongman =5;
 
 int updown =50; 
 int leftright =50;
@@ -15,16 +21,44 @@ w = width/size;
 h = height/size;
 
 pos = new PVector(w/2, h/2);
-
+food = new PVector(int(random(w)), int(random(h)));
 }
 
 void draw(){
 background(0,0,200);
+drawSnake();
+drawFood();
+
+
+if(frameCount % speed == 0){
+  updateSnake();
+}
+}
+
+void drawSnake(){
 fill(0,255,0);
-rect(pos.x * size, pos.y * size, size ,size);
+  rect(pos.x * size, pos.y * size,size,size);
+  for(int i =0; i < snake.size(); i++){
+  rect(snake.get(i).x * size, snake.get(i).y * size,size,size);
+  }
+}
+
+void drawFood(){
 fill(255,0,0);
-rect(100,100,20,20);
+rect(food.x * size,food.y * size,size,size,20);
+}
+
+void updateSnake(){
+  snake.add(new PVector(pos.x, pos.y));
+  while(snake.size() > longlongman){
+  snake.remove(0);
+  }
 pos.add(dir);
+
+if(pos.x <0) {pos.x = w -1;}
+if(pos.x >w) {pos.x = 0;}
+if(pos.y <0) {pos.y = h -1;}
+if(pos.y >h) {pos.y = 0;}
 }
 
 void keyPressed(){
